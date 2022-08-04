@@ -3,18 +3,27 @@ package sptech.exercicios.exercicios01.ex01;
 public class Exercicio01 {
     
     public static void main(String[] args) {
+        int value = 0;
 
         // recursive way
-        System.out.println(sum(4));
+        System.out.println(recursiveSum(value));
 
         // imperative way
-        
+        System.out.println(sum(value));
+    }
+
+    public static int recursiveSum(int n) {
+        if(n >= 0) {
+            return n + recursiveSum(n - 1);
+        }
+        return 0;
     }
 
     public static int sum(int n) {
-        if(n >= 0) {
-            return n + sum(n - 1);
+        int sum = 0;
+        while(n != 0) {
+            sum += n--;
         }
-        return 0;
+        return sum;
     }
 }
