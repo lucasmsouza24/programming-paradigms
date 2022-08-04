@@ -1,4 +1,4 @@
-package sptech.aula01;
+package sptech.aulas.aula01;
 
 public class ExemploRecursao {
     
