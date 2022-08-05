@@ -10,6 +10,7 @@ public class Exercicio02 {
         System.out.println(recursiveSum(array));
     }
 
+    // imperative
     public static int imperativeSum(int[] array) {
         int sum = 0;
         for (int value : array) {
@@ -18,6 +19,7 @@ public class Exercicio02 {
         return sum;
     }
 
+    // recursive
     public static int recursiveSum(int[] array, int start) {
         if (start < array.length) {
             return array[start] + recursiveSum(array, start + 1);
