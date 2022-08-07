@@ -1,4 +1,4 @@
-package sptech.exercicios.exercicios01.ex01;
+package sptech.exercicios.lista01;
 
 public class Exercicio04 {
     
@@ -25,7 +25,6 @@ public class Exercicio04 {
     // recursive
     public static int recursiveAmountOfOdds(int[] array, int start) {
         if (start < array.length) {
-            System.out.println("valor: " + array[start]);
             return array[start] % 2 == 1 ? 1 + recursiveAmountOfOdds(array, start + 1) : recursiveAmountOfOdds(array, start + 1);
         }
         return 0;

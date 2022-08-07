@@ -1,4 +1,4 @@
-package sptech.exercicios.exercicios01.ex01;
+package sptech.exercicios.lista01;
 
 public class Exercicio02 {
     
