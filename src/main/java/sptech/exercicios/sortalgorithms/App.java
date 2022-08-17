@@ -4,13 +4,15 @@ public class App {
     
     public static void main(String[] args) {
         
-        int[] unsorted = {3, 2, 4, 1, 5, 2, 6};
+        int[] unsorted = {5, 3, 1, 6, 3, 4, 2, 7, 1, 1};
         int[] insert = InsertSort.sort(unsorted);
         int[] merge = MergeSort.sort(unsorted);
+        int[] quick = QuickSort.sort(unsorted);
 
         displayValues(unsorted, "Unsorted");
         displayValues(insert, "Insert");
         displayValues(merge, "Merge");
+        displayValues(quick, "Quick");
     }
 
     public static void displayValues(int[] array, String title) {

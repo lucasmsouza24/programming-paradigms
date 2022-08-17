@@ -5,7 +5,7 @@ public class MergeSort {
     public static int[] sort(int[] unsorted) {
         int[] sorted = unsorted.clone();
 
-        sorted = sort(0, unsorted.length, unsorted);
+        sorted = sort(0, sorted.length, sorted);
 
         return sorted;
     }
