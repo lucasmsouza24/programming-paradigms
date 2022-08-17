@@ -4,7 +4,7 @@ public class App {
     
     public static void main(String[] args) {
         
-        int[] unsorted = {5, 3, 1, 6, 3, 4, 2, 7, 1, 1};
+        int[] unsorted = {2, 2, 2, 3, 4, 2, 7};
         int[] insert = InsertSort.sort(unsorted);
         int[] merge = MergeSort.sort(unsorted);
         int[] quick = QuickSort.sort(unsorted);
@@ -13,6 +13,11 @@ public class App {
         displayValues(insert, "Insert");
         displayValues(merge, "Merge");
         displayValues(quick, "Quick");
+
+        // binary search (in quick sorted)
+        int value = 2;
+        int index = BinarySearch.search(quick, value);
+        System.out.println(String.format("value: %d, index: %d", value, index));
     }
 
     public static void displayValues(int[] array, String title) {
