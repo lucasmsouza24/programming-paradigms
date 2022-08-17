@@ -2,25 +2,25 @@ package sptech.exercicios.sortalgorithms;
 
 public class InsertSort {
     
-    public static int[] sort(int[] tempArray) {
+    public static int[] sort(int[] unsorted) {
 
-        int min;
-        int[] array = tempArray.clone();
+        int[] v = unsorted.clone();
+        int i;
+        int j;
+        int x;
 
-        for (int i = 0; i < array.length - 2; i++) {
-            min = i;
-            for (int j = i + 1; j < array.length - 1; j++) {
-                if (array[j] < array[min]) {
-                    min = j;
+        for (i = 1; i <= v.length - 1; i++) {
+            x = v[i];
+            j = i - 1;
 
-                    // troca de valores
-                    int aux = array[i];
-                    array[i] = array[min];
-                    array[min] = aux;
-                }
+            while((j >= 0) && (v[j] > x)) {
+                v[j + 1] = v[j];
+                j = j - 1;
             }
+
+            v[j + 1] = x;
         }
 
-        return array;
+        return v;
     }
 }
