@@ -19,7 +19,7 @@ public class App {
         int index = BinarySearch.search(quick, value);
         int recursiveIndex = BinarySearch.recursiveSearch(quick, value);
         System.out.println(String.format("value: %d, index: %d", value, index));
-        System.out.println(String.format("value: %d, index: %d", value, index));
+        System.out.println(String.format("value: %d, index: %d", value, recursiveIndex));
     }
 
     public static void displayValues(int[] array, String title) {

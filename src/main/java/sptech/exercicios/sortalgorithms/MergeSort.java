@@ -27,13 +27,11 @@ public class MergeSort {
         int k = 0;
         int[] w = new int[r-p];
 
-        while((i < q) && (j < r)) {
-            w[k++] = v[i] <= v[j] ? v[i++] : v[j++];
-            while(i < q) w[k++] = v[i++];
-            while(j < r) w[k++] = v[j++];
-            for(i = p; i <= r-1; i++) v[i] = w[i - p];
-        }
-
+        while((i < q) && (j < r)) w[k++] = v[i] <= v[j] ? v[i++] : v[j++];
+        while(i < q) w[k++] = v[i++];
+        while(j < r) w[k++] = v[j++];
+        for(i = p; i <= r-1; i++) v[i] = w[i - p];
+        
     }
 
 }
