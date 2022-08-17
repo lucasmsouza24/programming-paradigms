@@ -4,7 +4,7 @@ public class Exercicio07 {
     
     public static void main(String[] args) {
 
-        Integer[] array = {1, 3, 2, 8, 5, 4, 3, 7, 3, 2, 5, 10};
+        Integer[] array = {1, 3, 2, 8, 5, 4, 3, 7, 3, 2, 5};
 
         System.out.println(imperativeMaxValue(array));
         System.out.println(recursiveMaxValue(array));
@@ -34,17 +34,4 @@ public class Exercicio07 {
     public static int recursiveMaxValue(Integer[] array) {
         return recursiveMaxValue(array, 0);
     }
-
-    // public static int recursiveMaxValue(Integer[] array, Integer start, Integer max) {
-    //     if (start < array.length) {
-    //         if (array[start] > max) {
-    //             return recursiveMaxValue(array, start + 1, array[start]);
-    //         } 
-    //         return recursiveMaxValue(array, start + 1, max);
-    //     }
-    //     return max;
-    // }
-    // public static int recursiveMaxValue(Integer[] array) {
-    //     return recursiveMaxValue(array, 0, Integer.MIN_VALUE);
-    // }
 }

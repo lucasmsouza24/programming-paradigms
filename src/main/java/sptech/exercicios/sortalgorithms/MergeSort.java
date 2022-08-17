@@ -5,13 +5,13 @@ public class MergeSort {
     public static int[] sort(int[] unsorted) {
         int[] sorted = unsorted.clone();
 
-        sorted = sort(0, unsorted.length - 1, unsorted);
+        sorted = sort(0, unsorted.length, unsorted);
 
         return sorted;
     }
 
     public static int[] sort(int p, int r, int[] v) {
-        if(p > r - 1) {
+        if(p < r - 1) {
             int q = (p + r) / 2;
             sort(p, q, v);
             sort(q, r, v);
@@ -25,26 +25,13 @@ public class MergeSort {
         int i = p;
         int j = q;
         int k = 0;
-        int[] w = {};
+        int[] w = new int[r-p];
 
         while((i < q) && (j < r)) {
-            if(w[k++] <= v[i++]) {
-                w[k++] = v[i++];
-            } else {
-                w[k++] = v[j++];
-            }
-
-            while(i < q) {
-                w[k++] = v[i++];
-            }
-
-            while(j < r) {
-                w[k++] = v[j++];
-            }
-
-            for(i = p; i <= r-1; i++) {
-                v[i] = w[i - p];
-            }
+            w[k++] = v[i] <= v[j] ? v[i++] : v[j++];
+            while(i < q) w[k++] = v[i++];
+            while(j < r) w[k++] = v[j++];
+            for(i = p; i <= r-1; i++) v[i] = w[i - p];
         }
 
     }
