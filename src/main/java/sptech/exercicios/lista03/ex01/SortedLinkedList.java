@@ -35,33 +35,50 @@ public class SortedLinkedList extends LinkedList {
 
         Node actual = this.head.getNext();
 
-        // return actual;
-
         while (actual != null) {
+
+            if (actual.getInfo() > value) {
+                break;
+            }
 
             if (actual.getInfo() < value) {
                 if (actual.getNext() != null) {
                     actual = actual.getNext();
                     continue;
                 }
-                
-                return null;
+                break;
             }
 
-            return actual.getInfo() == value ? actual : null;
+            return actual;
         }
 
         return null;
     }
 
-    // @Override
-    // public boolean remove(int valor) {
+    @Override
+    public boolean remove(int value) {
         
-    //     if(this.search(valor)) {
-            
-    //     }
+        if (this.isEmpty()) {
+            throw new IllegalStateException("the linked list is empty");
+        }
 
-    //     return super.remove(valor);
-    // }
+        Node previousNode = this.head;
+
+        // itering
+        while(previousNode.getNext() != null) {
+            Node actualNode = previousNode.getNext();
+            
+            // value founded
+            if (actualNode.getInfo() == value) {
+                previousNode.setNext(actualNode.getNext());
+                return true;
+            }
+
+            previousNode = actualNode;
+        }
+
+        // value not found
+        return false;
+    }
 
 }

@@ -13,9 +13,13 @@ public class App {
         linked.insert(2);
         linked.insert(2);
 
-        // linked.display();
-
-        System.out.println(linked.search(4));
+        linked.display();
+        // System.out.println(linked.search(22));
         // System.out.println(linked.search(1).getInfo());
+
+        // remove
+        // linked.display();
+        // linked.remove(-10);
+        // linked.display();
     }
 }

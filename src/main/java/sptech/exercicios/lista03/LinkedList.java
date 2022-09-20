@@ -66,6 +66,42 @@ public class LinkedList {
         return size;
     }
 
+    public boolean isEmpty() {
+        return getSize() == 0;
+    }
+
+    // concat other linked list to actual instance
+    public void concat(LinkedList linkedList) {
+
+        Node actual = head;
+
+        while (actual.getNext() != null) {
+            actual = actual.getNext();
+        }
+
+        actual.setNext(linkedList.getHead().getNext());
+    }
+
+    public boolean equals(LinkedList linked) {
+
+        if (this.getSize() != linked.getSize()) {
+            return false;
+        }
+
+        Node actualThis = head;
+        Node actualOther = linked.getHead();
+        
+        while (actualThis.getNext() != null && actualOther.getNext() != null) {
+            if (actualThis.getNext().getInfo() != actualOther.getNext().getInfo()) {
+                return false;
+            }
+            actualThis = actualThis.getNext();
+            actualOther = actualOther.getNext();
+        }
+
+        return true;
+    }
+
     // getters and setters
     public Node getHead() {
         return head;
