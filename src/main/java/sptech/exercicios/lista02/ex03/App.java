@@ -3,29 +3,42 @@ package sptech.exercicios.lista02.ex03;
 public class App {
     
     public static void main(String[] args) {
-        Integer[] unsorted = {-1, -2, -3, -4, 1, 5, 2};
-        // PilhaFila stackQueue = addItemsToStackQueue(unsorted);
-        // stackQueue.displayAll();
+        Integer[] unorganized = {-1, -2, -3, -4, 1, 5, 2};
+        PilhaFila stackQueue = addItemsToStackQueue(unorganized);
+        // System.out.println(stackQueue.poll());
+        
+        // exibindo ordenado
+        stackQueue.displayAll();
 
-        PilhaFila stack = new PilhaFila(5);
-        stack.insert(1);
-        stack.insert(2);
-        stack.insert(3);
-        System.out.println(stack.isEmpty(2));
-        stack.displayAll();
+        // exibindo com as ordem inversas
+        ordensInversas(stackQueue);
     }
     
-    public static PilhaFila addItemsToStackQueue(Integer[] unsorted) {
-        PilhaFila stackQueue = new PilhaFila(unsorted.length);
-        for (int i = 0; i < unsorted.length; i++) {
-            System.out.println(i + ", " + unsorted[i]);
-            if (unsorted[i] >= 0) {
-                stackQueue.insert(unsorted[i]);
+    public static PilhaFila addItemsToStackQueue(Integer[] unorganized) {
+        PilhaFila organized = new PilhaFila(unorganized.length);
+        for (int i = 0; i < unorganized.length; i++) {
+            // System.out.println(i + ", " + unorganized[i]);
+            if (unorganized[i] >= 0) {
+                organized.insert(unorganized[i]);
             } else {
-                stackQueue.push(unsorted[i]);
+                organized.push(unorganized[i]);
             }
         }
-        return stackQueue;
+        return organized;
     }
 
+    public static void ordensInversas(PilhaFila structure) {
+
+        System.out.println("ordem inversa");
+
+        // stack
+        while(structure.isNotEmpty(1)) {
+            System.out.print(structure.pop() + ", ");
+        }
+
+        // queue
+        while(structure.isNotEmpty(2)) {
+            System.out.print(structure.poll() + ", ");
+        }
+    }
 }

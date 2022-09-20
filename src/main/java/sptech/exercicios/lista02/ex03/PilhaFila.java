@@ -81,15 +81,20 @@ public class PilhaFila {
     public void insert(int value) {
         if(isNotFull()) {
             items[--lastItem] = value;
+            return;
         }
+
+        // the structure is full
+        throw new IllegalStateException("the structure is full");
     }
 
     // move all queue values to left
     private void moveQueueValuesToRight() {
-        if (isNotFull()) {
-            for(int i = lastItem; i < items.length; i++) {
-                items[i - 1] = items[i];
+        if (isNotEmpty(2)) {
+            for(int i = items.length - 1; i > lastItem; i--) {
+                items[i] = items[i - 1];
             }
+            items[lastItem++] = null;
             return;
         }
 
@@ -99,8 +104,8 @@ public class PilhaFila {
     // poll
     public  Integer poll() {
         if (isNotEmpty(2)) {
-            Integer value = items[lastItem];
-            items[lastItem] = null;
+            Integer value = items[items.length - 1];
+            moveQueueValuesToRight();
             return value;
         }
 
