@@ -35,14 +35,20 @@ public class SortedLinkedList extends LinkedList {
 
         Node actual = this.head.getNext();
 
-        while (actual != null) { 
-            if (actual.getNext() != null) {
-                if (value < actual.getNext().getInfo()) {
+        // return actual;
+
+        while (actual != null) {
+
+            if (actual.getInfo() < value) {
+                if (actual.getNext() != null) {
+                    actual = actual.getNext();
                     continue;
                 }
-                System.out.println(actual.getInfo());
-                return actual;
+                
+                return null;
             }
+
+            return actual.getInfo() == value ? actual : null;
         }
 
         return null;

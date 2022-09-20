@@ -15,6 +15,7 @@ public class App {
 
         // linked.display();
 
-        System.out.println(linked.search(7));
+        System.out.println(linked.search(4));
+        // System.out.println(linked.search(1).getInfo());
     }
 }
