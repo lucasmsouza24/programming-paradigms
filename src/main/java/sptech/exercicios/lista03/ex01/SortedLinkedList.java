@@ -40,10 +40,22 @@ public class SortedLinkedList extends LinkedList {
                 if (value < actual.getNext().getInfo()) {
                     continue;
                 }
+                System.out.println(actual.getInfo());
                 return actual;
             }
         }
 
         return null;
     }
+
+    // @Override
+    // public boolean remove(int valor) {
+        
+    //     if(this.search(valor)) {
+            
+    //     }
+
+    //     return super.remove(valor);
+    // }
+
 }
