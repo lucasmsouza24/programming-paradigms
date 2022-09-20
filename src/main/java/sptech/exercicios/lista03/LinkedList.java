@@ -102,6 +102,29 @@ public class LinkedList {
         return true;
     }
 
+    public void invert() {
+        if (this.isEmpty()) {
+            throw new IllegalStateException("the linked list is empty");
+        }
+
+        LinkedList newState = new LinkedList();
+
+        Node actual = this.head.getNext();
+
+        while (actual != null) {
+            newState.insert(actual.getInfo());
+
+            if(actual.getNext() != null) {
+                actual = actual.getNext();
+                continue;
+            }
+
+            break;
+        }
+
+        this.head = newState.getHead();
+    }
+
     // getters and setters
     public Node getHead() {
         return head;

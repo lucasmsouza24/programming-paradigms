@@ -54,7 +54,6 @@ public class App {
         linked6.insert(2);
         linked6.insert(1);
 
-
         linked3.display();
         linked4.display();
         System.out.println(linked3.equals(linked4));
@@ -62,6 +61,17 @@ public class App {
         linked5.display();
         linked6.display();
         System.out.println(linked5.equals(linked6));
+
+        // invert
+        title("invert");
+        LinkedList linked7 = new LinkedList();
+        linked7.insert(3);
+        linked7.insert(2);
+        linked7.insert(1);
+
+        linked7.display();
+        linked7.invert();
+        linked7.display();
     }
 
     public static void title(String title) {
