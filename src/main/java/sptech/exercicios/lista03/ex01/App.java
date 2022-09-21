@@ -1,9 +1,11 @@
 package sptech.exercicios.lista03.ex01;
 
+import sptech.exercicios.lista03.LinkedList;
+
 public class App {
 
     public static void main(String[] args) {
-        SortedLinkedList linked = new SortedLinkedList();
+        LinkedList linked = new SortedLinkedList();
 
         linked.insert(10);
         linked.insert(7);
