@@ -93,9 +93,24 @@ public class LinkedList {
 
     public Node getElement(int index) {
 
-        if (index < 0 || index > (getSize() - 1)) {
-            throw new IllegalStateException("");
+        // exceptions
+        if (index < 0) {
+            throw new IllegalArgumentException("Index must be positive");
+        } else if (index > (getSize() - 1)) {
+            throw new IllegalStateException("Index out of bounds");
         }
+
+        Node actual = head;
+        int pos = getSize() - 1;
+
+        while(actual.getNext() != null) {
+            if (pos == index) {
+                return actual.getNext();
+            }
+            pos--;
+            actual = actual.getNext();
+        }
+
         return null;
     }
 }
