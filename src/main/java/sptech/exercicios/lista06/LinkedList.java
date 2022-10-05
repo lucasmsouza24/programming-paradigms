@@ -113,4 +113,27 @@ public class LinkedList {
 
         return null;
     }
+
+    public boolean removeOccurs(int value) {
+
+        Node actual = head;
+        int removes = 0;
+
+        while(actual.getNext() != null) {    
+            if (actual.getNext().getInfo() == value) {
+                if (actual.getNext().getNext() != null) {
+                    actual.setNext(actual.getNext().getNext());
+                    removes++;
+                    continue;
+                } else { 
+                    actual.setNext(null);
+                    return true;
+                }
+            }
+
+            actual = actual.getNext();
+        }
+
+        return removes > 0;
+    }
 }
