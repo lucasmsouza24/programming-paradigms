@@ -136,4 +136,15 @@ public class LinkedList {
 
         return removes > 0;
     }
+
+    public void arrayToList(int[] vector) {
+
+        if(vector.length == 0) {
+            throw new IllegalArgumentException("vector argument must be non-empty array");
+        }
+
+        for (int i = vector.length - 1; i >= 0; i--) {
+            insert(vector[i]);
+        }
+    }
 }
