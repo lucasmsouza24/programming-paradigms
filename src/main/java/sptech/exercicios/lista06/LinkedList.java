@@ -101,13 +101,13 @@ public class LinkedList {
         }
 
         Node actual = head;
-        int pos = getSize() - 1;
+        int pos = 0;
 
         while(actual.getNext() != null) {
             if (pos == index) {
                 return actual.getNext();
             }
-            pos--;
+            pos++;
             actual = actual.getNext();
         }
 
