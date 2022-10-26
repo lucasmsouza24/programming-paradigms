@@ -1,0 +1,30 @@
+EXERCÍCIO 1
+    A)  (A (B (E) (F)) (C) (D (G)))
+
+        Graus dos nos:      A: 3, B: 2, C: 0, D: 1, E: 0, F: 0, G: 0              
+        Graus da árvore:    3
+        Folha da árvore:    3
+        Raiz da árvore:     A
+        Nós em cada nível:  0: 1, 1: 3, 2: 3
+        Altura da árvore:   2
+
+    B)  (A (B (D)(E)) (C (F)))
+
+        Graus dos nos:      A: 2, B: 2, C: 1, D: 0, E: 0, F: 0
+        Graus da árvore:    2
+        Folha da árvore:    3
+        Raiz da árvore:     A
+        Nós em cada nível:  0: 1, 1: 2, 2: 3
+        Altura da árvore:   2
+
+EXERCÍCIO 2 - ÁRVORE-MANCA
+
+    pré-ordem:
+    A, B, C, E, F, G, I, H, J, D
+
+    em ordem:
+    A, C, E, I, G, F, H, J, B, D
+
+    pós ordem:
+    I, G, J, H, F, E, C, D, B, A
+
