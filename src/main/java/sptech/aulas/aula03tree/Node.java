@@ -37,6 +37,6 @@ public class Node<T> {
     // to string
     @Override
     public String toString() {
-        return "Node [value=" + value + ", leftChild=" + leftChild + ", rightChild=" + rightChild + "]";
+        return String.format("%s\n/\t\\\n%s\t%s", value, leftChild, rightChild);
     }
 }

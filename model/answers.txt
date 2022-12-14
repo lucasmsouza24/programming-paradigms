@@ -28,3 +28,7 @@ EXERCÍCIO 2 - ÁRVORE-MANCA
     pós ordem:
     I, G, J, H, F, E, C, D, B, A
 
+EXERCICIO 3
+
+    Pós-ordem: H, J, I, G, K, F, E, L, D, C, B, A
+    Em-ordem:  C, E, H, G, I, J, F, K, D, L, B, A
